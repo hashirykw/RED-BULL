@@ -99,18 +99,19 @@ a{color:inherit}
 .tear--top{top:-1px;transform:scaleY(-1)}
 
 /* ---------- 3D CAN ---------- */
-.can3d{--w:200px;--u:calc(var(--w) / 280);position:relative;width:var(--w);height:calc(934 * var(--u));touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.can3d{--w:200px;--u:calc(var(--w) / 154);position:relative;width:var(--w);height:calc(441 * var(--u));touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
 .can3d.is-drag{cursor:grabbing}
-.c3-top,.c3-bot{position:absolute;left:calc(-40 * var(--u));width:calc(360 * var(--u));z-index:2;pointer-events:none}
-.c3-top{top:0;height:calc(68 * var(--u))}
-.c3-bot{top:calc(894 * var(--u));height:calc(40 * var(--u))}
-.c3-body{position:absolute;left:0;top:calc(64 * var(--u));width:var(--w);height:calc(834 * var(--u));perspective:calc(var(--w) * 14)}
+.c3-top,.c3-bot{position:absolute;left:0;width:var(--w);z-index:2;pointer-events:none}
+.c3-top{top:0;height:calc(13 * var(--u))}
+.c3-bot{top:calc(423 * var(--u));height:calc(18 * var(--u))}
+.c3-body,.c3-shade{clip-path:polygon(4% 0,96% 0,100% 5.3%,100% 97.6%,96.5% 100%,3.5% 100%,0 97.6%,0 5.3%)}
+.c3-body{position:absolute;left:0;top:calc(10 * var(--u));width:var(--w);height:calc(416 * var(--u));perspective:calc(var(--w) * 14)}
 .c3-cyl{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
 .c3-face{position:absolute;top:0;height:100%;background-image:url(assets/can-label.webp);background-repeat:no-repeat;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.c3-shade{position:absolute;inset:calc(64 * var(--u)) 0 calc(36 * var(--u));z-index:1;pointer-events:none;
-  background:linear-gradient(90deg,oklch(0% 0 0 / .62) 0%,oklch(0% 0 0 / .18) 12%,oklch(0% 0 0 / 0) 24%,oklch(100% 0 0 / .32) 36%,oklch(100% 0 0 / .05) 44%,oklch(0% 0 0 / 0) 60%,oklch(0% 0 0 / .14) 80%,oklch(0% 0 0 / .66) 100%),
+.c3-shade{position:absolute;inset:calc(10 * var(--u)) 0 calc(15 * var(--u));z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,oklch(0% 0 0 / .5) 0%,oklch(0% 0 0 / .14) 10%,oklch(0% 0 0 / 0) 22%,oklch(100% 0 0 / .26) 33%,oklch(100% 0 0 / .04) 41%,oklch(0% 0 0 / 0) 60%,oklch(0% 0 0 / .1) 82%,oklch(0% 0 0 / .55) 100%),
              linear-gradient(180deg,oklch(0% 0 0 / .25),transparent 4%,transparent 96%,oklch(0% 0 0 / .25))}
-.c3-floor{position:absolute;left:50%;bottom:calc(-30 * var(--u));width:calc(var(--w) * 1.6);height:calc(var(--w) * .28);transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,oklch(8% 0.08 268 / .55),transparent);z-index:-1;pointer-events:none}
+.c3-floor{position:absolute;left:50%;bottom:calc(-10 * var(--u));width:calc(var(--w) * 1.6);height:calc(var(--w) * .28);transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,oklch(8% 0.08 268 / .55),transparent);z-index:-1;pointer-events:none}
 
 /* ---------- header: floating glass pill ---------- */
 .hdr{position:fixed;z-index:50;top:14px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 2 * var(--gutter)));display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--space-md);padding:10px 12px 10px 24px;border-radius:var(--radius-pill);color:var(--color-white);transition:color var(--dur-med) var(--ease-out),background var(--dur-med) var(--ease-out)}
@@ -158,9 +159,9 @@ a{color:inherit}
 .hero-word span{display:inline-block;animation:letter-in 1000ms var(--ease-out) both;animation-delay:calc(var(--i) * 50ms)}
 @keyframes letter-in{from{transform:translateY(.14em)}to{transform:none}}
 .hero-can-wrap{position:relative;z-index:2;margin-top:clamp(40px,10vh,110px);transform:translate3d(calc(var(--mx,0) * 16px),calc(var(--my,0) * 10px + var(--p,0) * 120px),0) rotate(calc(-7deg + var(--mx,0) * 4deg))}
-.hero-can{--w:clamp(104px,min(14vw,17.5vh),210px);animation:can-in 1300ms var(--ease-out) both}
+.hero-can{--w:clamp(112px,min(16vw,20.5vh),240px);animation:can-in 1300ms var(--ease-out) both;-webkit-box-reflect:below 4px linear-gradient(transparent 76%,oklch(100% 0 0 / .2))}
 @keyframes can-in{from{translate:0 -60px}to{translate:0 0}}
-.plinth{position:absolute;left:50%;bottom:calc(var(--pw) * -.16);width:calc(var(--pw) * 2.3);height:calc(var(--pw) * .5);transform:translateX(-50%);border-radius:50%;--pw:clamp(104px,min(14vw,17.5vh),210px);
+.plinth{position:absolute;left:50%;bottom:calc(var(--pw) * -.16);width:calc(var(--pw) * 2.3);height:calc(var(--pw) * .5);transform:translateX(-50%);border-radius:50%;--pw:clamp(112px,min(16vw,20.5vh),240px);
   background:radial-gradient(closest-side,oklch(100% 0 0 / .22),oklch(100% 0 0 / .06) 70%,transparent);border-top:1px solid oklch(100% 0 0 / .35);box-shadow:0 30px 60px -10px oklch(10% 0.15 268 / .6),inset 0 2px 10px oklch(100% 0 0 / .2);z-index:-1}
 .hero-card{position:absolute;z-index:3;padding:var(--space-lg)}
 .hero-card--left{left:0;bottom:6%;width:min(360px,34vw)}
@@ -199,10 +200,10 @@ a{color:inherit}
 .show-lede{margin:0;font:600 clamp(20px,1.7vw,26px)/1.25 var(--font-serif);color:var(--color-ink-soft)}
 .deg-bg{position:absolute;right:var(--gutter);top:clamp(96px,15vh,150px);font:700 clamp(60px,10vw,170px)/1 var(--font-display);letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px oklch(43% 0.25 268 / .3);font-variant-numeric:tabular-nums;z-index:1}
 .show-center{position:relative;z-index:2;display:grid;place-items:center;margin-top:6vh}
-.seal{position:absolute;width:calc(var(--sw) * 3.3);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%) rotate(calc(var(--p,0) * -180deg));--sw:clamp(110px,min(18vw,19vh),230px);pointer-events:none}
+.seal{position:absolute;width:calc(var(--sw) * 3.3);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%) rotate(calc(var(--p,0) * -180deg));--sw:clamp(120px,min(19vw,22vh),260px);pointer-events:none}
 .seal text{font:600 7.2px/1 var(--font-serif);letter-spacing:2.6px;fill:var(--color-navy);text-transform:uppercase}
 .seal circle{fill:none;stroke:var(--color-navy);stroke-width:.25;opacity:.35}
-.show-can{--w:clamp(110px,min(18vw,19vh),230px)}
+.show-can{--w:clamp(120px,min(19vw,22vh),260px)}
 .specs{position:absolute;inset:0;z-index:3;pointer-events:none}
 .spec{position:absolute;width:min(250px,22vw);padding:var(--space-lg);pointer-events:auto;transition:transform var(--dur-slow) var(--ease-out),box-shadow var(--dur-slow) var(--ease-out),opacity var(--dur-slow) var(--ease-out);opacity:.6;transform:scale(.96)}
 .spec.is-on{opacity:1;transform:scale(1);box-shadow:inset 0 1px 0 oklch(100% 0 0 / .9),0 40px 80px -30px oklch(30% 0.2 268 / .5),0 0 0 1px oklch(86% 0.17 85 / .7)}
@@ -289,7 +290,12 @@ a{color:inherit}
 .pack .row + .row{margin-top:calc(var(--w) * -1.9)}
 .pack .row:first-child{transform:translateY(calc(var(--w) * -.45)) scale(.94);filter:brightness(.92)}
 @keyframes can-pop{from{transform:translateY(-36px) scale(.9);opacity:0}to{transform:none;opacity:1}}
-.config{position:relative;z-index:2;margin:calc(var(--space-2xl) * -1) auto 0;max-width:680px;padding:var(--space-xl);border-radius:32px}
+.buy-grid{position:relative;z-index:2;margin:calc(var(--space-2xl) * -1) auto 0;max-width:1060px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-lg);align-items:stretch;text-align:center}
+.config{position:relative;padding:var(--space-xl);border-radius:32px;display:flex;flex-direction:column;justify-content:center}
+.cold{margin:0;padding:10px;border-radius:32px;display:flex;flex-direction:column}
+.cold img{width:100%;flex:1;min-height:0;object-fit:cover;border-radius:24px;aspect-ratio:4/4.2}
+.cold figcaption{padding:var(--space-md) var(--space-sm) var(--space-xs);font:400 14px/1.45 var(--font-body);color:var(--color-ink-soft);text-align:left}
+.cold figcaption .serif{display:block;font-size:24px;line-height:1.1;color:var(--color-navy);margin-bottom:4px}
 .picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;border-radius:var(--radius-pill);background:oklch(22% 0.12 268 / .06)}
 .pick{border:0;background:transparent;border-radius:var(--radius-pill);padding:13px 8px;font:600 14px/1 var(--font-display);letter-spacing:.02em;color:var(--color-ink);white-space:nowrap;transition:background-color var(--dur-med) var(--ease-out),color var(--dur-med) var(--ease-out),box-shadow var(--dur-med) var(--ease-out)}
 .pick:hover{background:oklch(100% 0 0 / .7)}
@@ -310,7 +316,7 @@ a{color:inherit}
 .foot-hero{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(24px,5vw,80px)}
 .foot-mark{margin:0;font:800 clamp(72px,15vw,250px)/.85 var(--font-display);letter-spacing:-.035em;color:var(--color-red);white-space:nowrap;text-shadow:0 2px 0 var(--color-red-deep),0 30px 60px oklch(15% 0.15 268 / .5)}
 .foot-line{margin:var(--space-lg) 0 var(--space-xl);font:600 clamp(24px,2.6vw,38px)/1.15 var(--font-serif)}
-.foot-can{--w:clamp(90px,10vw,150px);margin-right:clamp(0px,4vw,60px)}
+.foot-can{--w:clamp(100px,11vw,170px);margin-right:clamp(0px,4vw,60px)}
 .foot-bar{max-width:1320px;margin:clamp(60px,9vw,110px) auto 0;padding:var(--space-md) var(--space-lg);border-radius:var(--radius-pill);display:flex;justify-content:space-between;align-items:center;gap:var(--space-lg);flex-wrap:wrap}
 .foot-links{display:flex;gap:var(--space-xl);flex-wrap:wrap;list-style:none;margin:0;padding:0}
 .foot-links a{font:600 13px/1 var(--font-body);text-decoration:none;white-space:nowrap;opacity:.85}
@@ -384,7 +390,7 @@ body.menu-open .sheet{transform:none}
   .show-lede{display:none}
   .deg-bg{display:none}
   .show-center{margin-top:-16vh}
-  .show-can,.seal{--w:clamp(70px,21vw,92px);--sw:clamp(70px,21vw,92px)}
+  .show-can,.seal{--w:clamp(80px,24vw,104px);--sw:clamp(80px,24vw,104px)}
   .specs{inset:auto 0 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 var(--gutter) calc(var(--space-2xl) + 30px);top:auto}
   .spec{position:relative;left:auto!important;top:auto!important;width:auto;padding:12px 14px;border-radius:18px}
   .spec-v{font-size:22px}.spec-l{font-size:14px}
@@ -395,6 +401,8 @@ body.menu-open .sheet{transform:none}
   .foot-bar{flex-direction:column;align-items:flex-start;border-radius:var(--radius-lg)}
   .credit{flex-wrap:wrap}
   .config{padding:var(--space-md);border-radius:26px}
+  .buy-grid{grid-template-columns:minmax(0,1fr)}
+  .cold{order:2}
   .pick{font-size:13px;padding:12px 4px}
   .meta{gap:var(--space-lg);padding:var(--space-md) var(--space-lg)}
   .lap{right:0;top:0}
@@ -489,7 +497,7 @@ body.menu-open .sheet{transform:none}
     <span class="orb orb--blue" aria-hidden="true"></span><span class="orb orb--yellow" aria-hidden="true"></span><span class="orb orb--red" aria-hidden="true"></span>
     <div class="show-head">
       <h2 class="show-title">THE<br>CAN.</h2>
-      <p class="show-lede">Turn it over. Every side of the slim 250&nbsp;ml tells you something.</p>
+      <p class="show-lede">Turn it over. Every side of the 355&nbsp;ml can tells you something.</p>
     </div>
     <div class="deg-bg" id="degBg" aria-hidden="true">000°</div>
     <div class="show-center">
@@ -501,9 +509,9 @@ body.menu-open .sheet{transform:none}
       <div class="can3d show-can" id="showCan" role="img" aria-label="Red Bull can rotating as you scroll" data-auto="0"></div>
     </div>
     <div class="specs">
-      <div class="spec glass glass--light"><div class="spec-n">I · FRONT</div><div class="spec-v">250 ml</div><div class="spec-l">The original slim can</div></div>
-      <div class="spec glass glass--light"><div class="spec-n">II · SIDE</div><div class="spec-v">80 mg</div><div class="spec-l">Caffeine per can</div></div>
-      <div class="spec glass glass--light"><div class="spec-n">III · BACK</div><div class="spec-v">1000 mg</div><div class="spec-l">Taurine per can</div></div>
+      <div class="spec glass glass--light"><div class="spec-n">I · FRONT</div><div class="spec-v">355 ml</div><div class="spec-l">The tall can, ice cold</div></div>
+      <div class="spec glass glass--light"><div class="spec-n">II · SIDE</div><div class="spec-v">114 mg</div><div class="spec-l">Caffeine per can</div></div>
+      <div class="spec glass glass--light"><div class="spec-n">III · BACK</div><div class="spec-v">1420 mg</div><div class="spec-l">Taurine per can</div></div>
       <div class="spec glass glass--light"><div class="spec-n">IV · SIDE</div><div class="spec-v">B-vitamins</div><div class="spec-l">B3 · B5 · B6 · B12</div></div>
     </div>
     <div class="show-hint glass glass--light" aria-hidden="true">Scroll to turn <i></i></div>
@@ -584,6 +592,11 @@ body.menu-open .sheet{transform:none}
 
   <div class="pack-stage"><div class="pack" id="pack" aria-hidden="true"></div></div>
 
+  <div class="buy-grid">
+  <figure class="cold glass glass--light">
+    <img src="assets/splash.webp" alt="A chilled can of Red Bull in a splash of ice-cold water" width="742" height="812" loading="lazy" decoding="async">
+    <figcaption><span class="serif">Serve ice cold.</span> Straight from the fridge, the way it was meant to be.</figcaption>
+  </figure>
   <div class="config glass glass--light">
     <div class="picker" role="radiogroup" aria-label="Pack size" id="picker"></div>
     <div class="price-row" aria-live="polite"><span class="price" id="price">—</span><span class="price-each" id="each"></span></div>
@@ -595,7 +608,8 @@ body.menu-open .sheet{transform:none}
       </div>
       <button class="btn btn--red" id="addBtn" type="button">Add to cart <span class="arrow" aria-hidden="true">→</span></button>
     </div>
-    <p class="price-note">250 ml cans · prices in PKR, delivery calculated at checkout.</p>
+    <p class="price-note">355 ml cans · prices in PKR, delivery calculated at checkout.</p>
+  </div>
   </div>
   <svg class="tear tear--bottom" aria-hidden="true"><use href="#tear"/></svg>
 </section>
